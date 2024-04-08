@@ -1,10 +1,30 @@
 import random 
-a = random.randint(1, 100)
+from tkinter import *
+
+root = Tk()
+root.title('Игрра "Угадай число" ')
+root.geometry('800x600')
+root.resizable(width=False, height=False)
+
+root.mainloop()
+
+
+
+complexity = 0
+a = 0
 # Логирование 
 i = 0
 attemp = 0
 live = 5
+complexity = int(input('выберите сложность 1 - легкая. 2 - средняя. 3 - сложная: '))
+if complexity == 1:
+    a = random.randint(1, 10)
+elif complexity == 2:
+    a = random.randint(1, 50)
+elif complexity == 3:
+    a = random.randint(1, 100)
 while True:
+    
     i = int(input('ваша догадка: '))
 
     if i == a:
